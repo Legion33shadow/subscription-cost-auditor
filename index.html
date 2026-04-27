@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="The average person pays for 12-15 subscriptions and underestimates the total by 40%. Audit yours in 2 minutes. Netflix, Spotify, Adobe, gym, cloud storage and more.">
+<meta name="keywords" content="subscription cost calculator, monthly subscription audit, how much do I spend on subscriptions, subscription tracker, subscription burn rate">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Subscription Cost Auditor — Find Your Hidden Monthly Burn">
+<meta property="og:description" content="The average person pays for 12-15 subscriptions and underestimates the total by 40%. Audit yours in 2 minutes. Netflix, Spotify, Adobe, gym, cloud storage and more.">
+<link rel="canonical" href="https://legion33shadow.github.io/subscription-cost-auditor/">
+<title>Subscription Cost Auditor — Find Your Hidden Monthly Burn</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5382997898313669" crossorigin="anonymous"></script>
+<style>
+:root{--p:#2563eb;--d:#1e40af;--g:#16a34a;--o:#ea580c;--bg:#f8fafc;--card:#fff;--t:#1e293b;--s:#64748b;--b:#e2e8f0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--t);line-height:1.6}
+header{background:linear-gradient(135deg,var(--p),var(--d));color:#fff;padding:1.5rem 1rem;text-align:center}
+header h1{font-size:clamp(1.1rem,3.5vw,1.6rem);font-weight:800;margin-bottom:.4rem}
+header p{opacity:.88;font-size:.88rem;max-width:600px;margin:0 auto}
+.badge{display:inline-block;background:#ffffff25;border-radius:20px;padding:.2rem .7rem;font-size:.75rem;margin:.3rem .15rem}
+.container{max-width:720px;margin:1.5rem auto;padding:0 1rem}
+.card{background:var(--card);border-radius:14px;padding:1.5rem;box-shadow:0 1px 16px rgba(0,0,0,.06);margin-bottom:1.5rem;border:1px solid var(--b)}
+.card h2{color:var(--p);font-size:1.05rem;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:2px solid var(--p);display:flex;align-items:center;gap:.4rem;font-weight:700}
+label{display:block;font-size:.82rem;color:var(--s);margin:.7rem 0 .25rem;font-weight:600;letter-spacing:.01em}
+input,select,textarea{width:100%;padding:.65rem .8rem;border:1.5px solid var(--b);border-radius:8px;font-size:.95rem;color:var(--t);background:#fff;transition:border .15s}
+input:focus,select:focus{outline:none;border-color:var(--p);box-shadow:0 0 0 3px #2563eb15}
+input[readonly]{background:#f1f5f9;cursor:default;color:var(--s)}
+button.primary{width:100%;padding:.8rem;background:var(--p);color:#fff;border:none;border-radius:8px;font-size:.95rem;font-weight:700;cursor:pointer;margin-top:.8rem;transition:background .2s;letter-spacing:.01em}
+button.primary:hover{background:var(--d)}
+button.secondary{width:100%;padding:.6rem;background:#f1f5f9;color:var(--t);border:1px solid var(--b);border-radius:8px;font-size:.85rem;cursor:pointer;margin-top:.4rem}
+button.secondary:hover{background:#e2e8f0}
+.result{background:#eff6ff;border-left:4px solid var(--p);border-radius:0 10px 10px 0;padding:1rem 1.2rem;margin-top:1rem;display:none}
+.result.show{display:block}
+.result.warn{background:#fff7ed;border-color:var(--o)}
+.result.good{background:#f0fdf4;border-color:var(--g)}
+.big{font-size:2rem;font-weight:800;color:var(--p);line-height:1.2}
+.big.warn{color:var(--o)}.big.good{color:var(--g)}
+.sub{font-size:.82rem;color:var(--s);margin-top:.25rem}
+.breakdown{font-size:.82rem;color:#475569;margin-top:.7rem;padding-top:.7rem;border-top:1px dashed #cbd5e1;line-height:1.8}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem}
+.chip{display:inline-block;background:#dbeafe;color:#1d4ed8;border-radius:5px;padding:.15rem .5rem;font-size:.73rem;font-weight:700;margin:.1rem}
+.chip.red{background:#fee2e2;color:#b91c1c}
+.chip.grn{background:#dcfce7;color:#15803d}
+.chip.org{background:#ffedd5;color:#c2410c}
+.info{background:#f0f9ff;border:1px solid #bae6fd;border-radius:8px;padding:.7rem 1rem;font-size:.82rem;color:#0369a1;margin:.6rem 0;line-height:1.6}
+.info.warn{background:#fff7ed;border-color:#fed7aa;color:#9a3412}
+.info.good{background:#f0fdf4;border-color:#bbf7d0;color:#166534}
+.progress-bar{height:12px;border-radius:6px;background:#e2e8f0;margin:.4rem 0;overflow:hidden}
+.progress-fill{height:100%;border-radius:6px;transition:width .5s;background:var(--p)}
+.ads{text-align:center;margin:.8rem 0;min-height:60px}
+footer{text-align:center;padding:1.5rem;color:var(--s);font-size:.78rem;border-top:1px solid var(--b);margin-top:1rem}
+@media(max-width:500px){.row2,.row3{grid-template-columns:1fr}.card{padding:1rem}.big{font-size:1.5rem}}
+</style>
+</head>
+<body>
+<header>
+<h1>Subscription Cost Auditor — Find Your Hidden Monthly Burn</h1>
+<p>The average person pays for 12-15 subscriptions and underestimates the total by 40%. Audit yours in 2 minutes. Netflix, Spotify, Adobe, gym, cloud storage and more.</p>
+<div style="margin-top:.6rem"><span class="badge">💸 Quick audit</span><span class="badge">🔍 Find hidden costs</span><span class="badge">📊 Visual breakdown</span><span class="badge">⚡ 2-minute setup</span></div>
+</header>
+<div class="ads"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5382997898313669" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+<div class="container">
+
+<div class="card">
+<h2>💸 Subscription Cost Auditor — What Are You REALLY Paying?</h2>
+<div class="info warn">⚠️ The average person has 12-15 active subscriptions and underestimates the total by 40%. Let's find out your real number.</div>
+<div id="sub_list">
+<div class="sub-item" style="display:grid;grid-template-columns:1fr auto auto;gap:.5rem;align-items:center;margin-bottom:.5rem">
+<input type="text" class="sub-name" placeholder="Subscription name (e.g. Netflix)">
+<input type="number" class="sub-cost" placeholder="Cost" step="0.01" min="0" style="width:80px">
+<select class="sub-freq">
+<option value="1">/ mo</option>
+<option value="12">/ yr</option>
+<option value="4">/ qtr</option>
+</select>
+</div>
+</div>
+<button class="secondary" onclick="addSub()" style="margin-bottom:.5rem">+ Add subscription</button>
+<div class="info" style="font-size:.8rem;margin-bottom:.5rem">💡 Common subscriptions: Netflix, Spotify, Amazon Prime, Disney+, Apple iCloud, Adobe, LinkedIn, ChatGPT, Gym, Cloud storage, VPN, News, Gaming, Delivery, TV streaming...</div>
+<button class="primary" onclick="calcSubs()">Calculate my total burn</button>
+<div class="result" id="res_sub">
+  <div class="big" id="val_sub"></div>
+  <div class="sub" id="sub_sub"></div>
+  <div class="breakdown" id="brk_sub"></div>
+</div>
+</div>
+
+<div class="card">
+<h2>📊 Your subscription breakdown</h2>
+<div id="sub_breakdown" style="display:none">
+<div id="sub_list_out" style="margin-bottom:.8rem"></div>
+<div class="info" id="sub_verdict"></div>
+</div>
+</div>
+
+<div class="card">
+<h2>🔍 Quick-add common subscriptions</h2>
+<div style="display:flex;flex-wrap:wrap;gap:.4rem">
+<button class="secondary" style="width:auto;padding:.3rem .7rem;font-size:.78rem" onclick="quickAdd('Netflix','15.99')">Netflix €15.99</button>
+<button class="secondary" style="width:auto;padding:.3rem .7rem;font-size:.78rem" onclick="quickAdd('Spotify','10.99')">Spotify €10.99</button>
+<button class="secondary" style="width:auto;padding:.3rem .7rem;font-size:.78rem" onclick="quickAdd('Amazon Prime','8.99')">Prime €8.99</button>
+<button class="secondary" style="width:auto;padding:.3rem .7rem;font-size:.78nm" onclick="quickAdd('Disney+','8.99')">Disney+ €8.99</button>
+<button class="secondary" style="width:auto;padding:.3rem .7rem;font-size:.78rem" onclick="quickAdd('ChatGPT Plus','20')">ChatGPT €20</button>
+<button class="secondary" style="width:auto;padding:.3rem .7rem;font-size:.78rem" onclick="quickAdd('iCloud 200GB','2.99')">iCloud €2.99</button>
+<button class="secondary" style="width:auto;padding:.3rem .7rem;font-size:.78rem" onclick="quickAdd('Gym','39.99')">Gym €39.99</button>
+<button class="secondary" style="width:auto;padding:.3rem .7rem;font-size:.78rem" onclick="quickAdd('Adobe CC','59.99')">Adobe €59.99</button>
+<button class="secondary" style="width:auto;padding:.3rem .7rem;font-size:.78rem" onclick="quickAdd('YouTube Premium','13.99')">YT Premium €13.99</button>
+<button class="secondary" style="width:auto;padding:.3rem .7rem;font-size:.78rem" onclick="quickAdd('VPN','5.99')">VPN €5.99</button>
+</div>
+</div>
+
+<script>
+function addSub(name='',cost=''){
+  const list=document.getElementById('sub_list');
+  const div=document.createElement('div');
+  div.className='sub-item';
+  div.style.cssText='display:grid;grid-template-columns:1fr auto auto auto;gap:.4rem;align-items:center;margin-bottom:.4rem';
+  div.innerHTML='<input type="text" class="sub-name" placeholder="Name" value="'+name+'">'
+    +'<input type="number" class="sub-cost" placeholder="Cost" value="'+cost+'" step="0.01" min="0" style="width:75px">'
+    +'<select class="sub-freq"><option value="1">/ mo</option><option value="12">/ yr</option><option value="4">/ qtr</option></select>'
+    +'<button onclick="this.parentElement.remove()" style="background:#fee2e2;border:none;border-radius:6px;padding:.3rem .5rem;cursor:pointer;color:#b91c1c;font-size:.9rem">✕</button>';
+  list.appendChild(div);
+}
+function quickAdd(name,cost){addSub(name,cost);}
+function calcSubs(){
+  const items=document.querySelectorAll('.sub-item');
+  let monthlyTotal=0;
+  const subs=[];
+  items.forEach(item=>{
+    const name=item.querySelector('.sub-name').value||'Unknown';
+    const cost=+item.querySelector('.sub-cost').value||0;
+    const freq=+item.querySelector('.sub-freq').value;
+    const monthly=freq===1?cost:freq===12?cost/12:cost/3;
+    if(monthly>0){subs.push({name,monthly,annual:monthly*12});monthlyTotal+=monthly;}
+  });
+  if(subs.length===0){alert('Add at least one subscription first');return;}
+  const annual=monthlyTotal*12;
+  const hourly=annual/2080;
+  subs.sort((a,b)=>b.monthly-a.monthly);
+  const f=n=>'€'+n.toFixed(2);
+  document.getElementById('val_sub').textContent='€'+monthlyTotal.toFixed(2)+'/month';
+  document.getElementById('sub_sub').textContent='€'+annual.toFixed(2)+'/year · '+subs.length+' subscriptions';
+  document.getElementById('brk_sub').innerHTML=
+    'That's '+hourly.toFixed(1)+' work-hours/year just for subscriptions'+
+    ' · In 5 years: €'+Math.round(annual*5).toLocaleString()+
+    ' · Top spender: '+subs[0].name+' (€'+subs[0].monthly.toFixed(2)+'/mo)';
+  document.getElementById('res_sub').className='result show '+(monthlyTotal>150?'warn':'');
+  document.getElementById('sub_list_out').innerHTML=subs.map(s=>
+    '<div style="display:flex;justify-content:space-between;align-items:center;padding:.4rem 0;border-bottom:1px solid #e2e8f0;font-size:.85rem">'
+    +'<span>'+s.name+'</span>'
+    +'<div><span class="chip '+(s.monthly>20?'red':s.monthly>10?'org':'grn')+'">'+f(s.monthly)+'/mo</span>'
+    +'<span style="color:#64748b;font-size:.75rem;margin-left:.3rem">'+f(s.annual)+'/yr</span></div></div>'
+  ).join('');
+  const verdict=monthlyTotal<50?'✅ Under control — below average.':
+    monthlyTotal<100?'⚠️ Average zone — check if you use everything.':
+    monthlyTotal<200?'🔴 High spend — audit what you actually use.':
+    '🚨 Very high — immediate audit recommended.';
+  document.getElementById('sub_verdict').textContent=verdict;
+  document.getElementById('sub_breakdown').style.display='block';
+}
+</script>
+<div class="card" style="background:#f8fafc;border-style:dashed">
+<p style="font-size:.82rem;color:#64748b;text-align:center;line-height:1.7">
+⚠️ Tous les calculs sont des estimations basées sur les règles de 2026.
+Consultez un professionnel pour des décisions importantes. Mis à jour: 2026-04-28</p>
+</div>
+</div>
+<div class="ads"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5382997898313669" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+<footer>
+<p>© 2026 Subscription Cost Auditor — Find Your Hidden Monthly Burn · https://legion33shadow.github.io/subscription-cost-auditor</p>
+<p style="margin-top:.3rem;font-size:.75rem">Outil gratuit · Informations indicatives uniquement</p>
+</footer>
+</body></html>
