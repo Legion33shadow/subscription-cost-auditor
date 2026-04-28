@@ -1,174 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="The average person pays for 12-15 subscriptions and underestimates the total by 40%. Audit yours in 2 minutes. Netflix, Spotify, Adobe, gym, cloud storage and more.">
-<meta name="keywords" content="subscription cost calculator, monthly subscription audit, how much do I spend on subscriptions, subscription tracker, subscription burn rate">
-<meta name="robots" content="index,follow">
-<meta property="og:title" content="Subscription Cost Auditor — Find Your Hidden Monthly Burn">
-<meta property="og:description" content="The average person pays for 12-15 subscriptions and underestimates the total by 40%. Audit yours in 2 minutes. Netflix, Spotify, Adobe, gym, cloud storage and more.">
-<link rel="canonical" href="https://legion33shadow.github.io/subscription-cost-auditor/">
-<title>Subscription Cost Auditor — Find Your Hidden Monthly Burn</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Subscription Cost Auditor 2026 — See What You're Burning</title>
+<meta name="description" content="Add all your monthly subscriptions and see the real annual cost, 10-year loss, and exactly which ones to cancel first."/>
+<meta name="keywords" content="subscription cost calculator 2026, monthly subscription tracker, cancel subscriptions calculator, hidden subscription costs"/>
+<meta name="robots" content="index,follow"/>
+<meta property="og:title" content="Subscription Cost Auditor 2026 — See What You're Burning"/>
+<meta property="og:description" content="Add all your monthly subscriptions and see the real annual cost, 10-year loss, and exactly which ones to cancel first."/>
+<meta property="og:type" content="website"/>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5382997898313669" crossorigin="anonymous"></script>
 <style>
-:root{--p:#2563eb;--d:#1e40af;--g:#16a34a;--o:#ea580c;--bg:#f8fafc;--card:#fff;--t:#1e293b;--s:#64748b;--b:#e2e8f0}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--t);line-height:1.6}
-header{background:linear-gradient(135deg,var(--p),var(--d));color:#fff;padding:1.5rem 1rem;text-align:center}
-header h1{font-size:clamp(1.1rem,3.5vw,1.6rem);font-weight:800;margin-bottom:.4rem}
-header p{opacity:.88;font-size:.88rem;max-width:600px;margin:0 auto}
-.badge{display:inline-block;background:#ffffff25;border-radius:20px;padding:.2rem .7rem;font-size:.75rem;margin:.3rem .15rem}
-.container{max-width:720px;margin:1.5rem auto;padding:0 1rem}
-.card{background:var(--card);border-radius:14px;padding:1.5rem;box-shadow:0 1px 16px rgba(0,0,0,.06);margin-bottom:1.5rem;border:1px solid var(--b)}
-.card h2{color:var(--p);font-size:1.05rem;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:2px solid var(--p);display:flex;align-items:center;gap:.4rem;font-weight:700}
-label{display:block;font-size:.82rem;color:var(--s);margin:.7rem 0 .25rem;font-weight:600;letter-spacing:.01em}
-input,select,textarea{width:100%;padding:.65rem .8rem;border:1.5px solid var(--b);border-radius:8px;font-size:.95rem;color:var(--t);background:#fff;transition:border .15s}
-input:focus,select:focus{outline:none;border-color:var(--p);box-shadow:0 0 0 3px #2563eb15}
-input[readonly]{background:#f1f5f9;cursor:default;color:var(--s)}
-button.primary{width:100%;padding:.8rem;background:var(--p);color:#fff;border:none;border-radius:8px;font-size:.95rem;font-weight:700;cursor:pointer;margin-top:.8rem;transition:background .2s;letter-spacing:.01em}
-button.primary:hover{background:var(--d)}
-button.secondary{width:100%;padding:.6rem;background:#f1f5f9;color:var(--t);border:1px solid var(--b);border-radius:8px;font-size:.85rem;cursor:pointer;margin-top:.4rem}
-button.secondary:hover{background:#e2e8f0}
-.result{background:#eff6ff;border-left:4px solid var(--p);border-radius:0 10px 10px 0;padding:1rem 1.2rem;margin-top:1rem;display:none}
-.result.show{display:block}
-.result.warn{background:#fff7ed;border-color:var(--o)}
-.result.good{background:#f0fdf4;border-color:var(--g)}
-.big{font-size:2rem;font-weight:800;color:var(--p);line-height:1.2}
-.big.warn{color:var(--o)}.big.good{color:var(--g)}
-.sub{font-size:.82rem;color:var(--s);margin-top:.25rem}
-.breakdown{font-size:.82rem;color:#475569;margin-top:.7rem;padding-top:.7rem;border-top:1px dashed #cbd5e1;line-height:1.8}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
-.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem}
-.chip{display:inline-block;background:#dbeafe;color:#1d4ed8;border-radius:5px;padding:.15rem .5rem;font-size:.73rem;font-weight:700;margin:.1rem}
-.chip.red{background:#fee2e2;color:#b91c1c}
-.chip.grn{background:#dcfce7;color:#15803d}
-.chip.org{background:#ffedd5;color:#c2410c}
-.info{background:#f0f9ff;border:1px solid #bae6fd;border-radius:8px;padding:.7rem 1rem;font-size:.82rem;color:#0369a1;margin:.6rem 0;line-height:1.6}
-.info.warn{background:#fff7ed;border-color:#fed7aa;color:#9a3412}
-.info.good{background:#f0fdf4;border-color:#bbf7d0;color:#166534}
-.progress-bar{height:12px;border-radius:6px;background:#e2e8f0;margin:.4rem 0;overflow:hidden}
-.progress-fill{height:100%;border-radius:6px;transition:width .5s;background:var(--p)}
-.ads{text-align:center;margin:.8rem 0;min-height:60px}
-footer{text-align:center;padding:1.5rem;color:var(--s);font-size:.78rem;border-top:1px solid var(--b);margin-top:1rem}
-@media(max-width:500px){.row2,.row3{grid-template-columns:1fr}.card{padding:1rem}.big{font-size:1.5rem}}
+:root{--blue:#2563eb;--dark:#0f172a;--green:#16a34a;--red:#dc2626;
+      --orange:#ea580c;--purple:#7c3aed;--light:#f8fafc;
+      --shadow:0 8px 32px rgba(0,0,0,.12)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+     background:var(--light);color:var(--dark);min-height:100vh}
+header{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 60%,#1e40af 100%);
+       color:#fff;padding:40px 20px 32px;text-align:center;position:relative;
+       overflow:hidden}
+header::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 70% 50%,rgba(99,102,241,.15),transparent 70%)}
+header h1{font-size:clamp(1.2rem,3.5vw,2.1rem);line-height:1.3;
+          margin-bottom:10px;position:relative}
+header p{opacity:.8;font-size:.95rem;max-width:640px;
+         margin:0 auto;position:relative}
+.badge{display:inline-block;background:rgba(255,255,255,.15);
+       border:1px solid rgba(255,255,255,.25);border-radius:20px;
+       padding:3px 10px;font-size:.75rem;margin-bottom:12px;
+       backdrop-filter:blur(4px)}
+.container{max-width:760px;margin:28px auto;padding:0 16px}
+.card{background:#fff;border-radius:16px;box-shadow:var(--shadow);
+      padding:28px;margin-bottom:22px;border:1px solid rgba(0,0,0,.05)}
+.card h2{font-size:1rem;color:var(--blue);margin-bottom:18px;
+         border-bottom:2px solid #eff6ff;padding-bottom:8px;
+         display:flex;align-items:center;gap:8px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:.82rem;font-weight:600;
+             color:#475569;margin-bottom:5px}
+.field input,.field select{width:100%;padding:11px 14px;
+  border:1.5px solid #e2e8f0;border-radius:10px;font-size:.95rem;
+  background:#fafafa;transition:all .2s}
+.field input:focus,.field select:focus{outline:none;background:#fff;
+  border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+.btn{width:100%;background:linear-gradient(135deg,#1d4ed8,#2563eb);
+     color:#fff;border:none;padding:15px;border-radius:12px;
+     font-size:1rem;font-weight:700;cursor:pointer;
+     transition:all .2s;margin-top:8px;letter-spacing:.3px}
+.btn:hover{transform:translateY(-2px);
+           box-shadow:0 8px 24px rgba(37,99,235,.35)}
+.result-row{display:flex;justify-content:space-between;align-items:center;
+            padding:13px 0;border-bottom:1px solid #f1f5f9}
+.result-row:last-child{border-bottom:none}
+.res-label{color:#64748b;font-size:.875rem}
+.res-value{font-weight:800;font-size:1.1rem;color:var(--blue)}
+/* ── SHOCK ── */
+.shock{display:none;border-radius:14px;padding:22px;margin-top:20px;
+       animation:pop .5s cubic-bezier(.34,1.56,.64,1)}
+@keyframes pop{0%{transform:scale(.85);opacity:0}100%{transform:scale(1);opacity:1}}
+.shock-red{background:linear-gradient(135deg,#fef2f2,#fff1f1);
+           border:2px solid var(--red);color:var(--red)}
+.shock-orange{background:linear-gradient(135deg,#fff7ed,#fffbeb);
+              border:2px solid var(--orange);color:var(--orange)}
+.shock-green{background:linear-gradient(135deg,#f0fdf4,#ecfdf5);
+             border:2px solid var(--green);color:var(--green)}
+.shock-title{font-size:1.2rem;font-weight:800;margin-bottom:8px}
+.shock-sub{font-size:.9rem;opacity:.85;margin-top:4px}
+/* ── FUTURE PROJECTION ── */
+.future-box{display:none;margin-top:20px;border-radius:14px;overflow:hidden;
+            border:2px solid #6366f1}
+.future-header{background:linear-gradient(135deg,#4338ca,#6366f1);
+               color:#fff;padding:14px 20px;font-weight:700;font-size:.95rem}
+.future-grid{display:grid;grid-template-columns:repeat(3,1fr);
+             background:#fff;border-top:none}
+.future-col{padding:18px;text-align:center;border-right:1px solid #e0e7ff}
+.future-col:last-child{border-right:none}
+.future-year{font-size:.75rem;color:#6366f1;font-weight:700;
+             text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.future-val{font-size:1.3rem;font-weight:800;color:#312e81}
+.future-sub{font-size:.72rem;color:#64748b;margin-top:4px}
+/* ── PRESCRIPTION / ACTIONS ── */
+.prescription{display:none;margin-top:20px}
+.prescription-header{background:linear-gradient(135deg,#0f172a,#1e3a5f);
+                     color:#fff;padding:16px 20px;border-radius:14px 14px 0 0;
+                     font-weight:700;font-size:.95rem}
+.action-list{background:#fff;border:2px solid #0f172a;border-top:none;
+             border-radius:0 0 14px 14px;padding:16px}
+.action-item{display:flex;align-items:flex-start;gap:12px;
+             padding:14px;background:#f8fafc;border-radius:10px;
+             margin-bottom:10px;cursor:pointer;transition:all .2s;
+             border:1px solid #e2e8f0}
+.action-item:hover{background:#eff6ff;border-color:#bfdbfe;
+                   transform:translateX(4px)}
+.action-item:last-child{margin-bottom:0}
+.action-num{background:var(--blue);color:#fff;width:26px;height:26px;
+            border-radius:50%;display:flex;align-items:center;justify-content:center;
+            font-size:.8rem;font-weight:800;flex-shrink:0}
+.action-text{flex:1}
+.action-title{font-weight:700;font-size:.9rem;color:#1e293b;margin-bottom:3px}
+.action-desc{font-size:.8rem;color:#64748b;line-height:1.5}
+.action-gain{background:#dcfce7;color:#166534;padding:2px 8px;
+             border-radius:20px;font-size:.75rem;font-weight:700;
+             margin-left:auto;white-space:nowrap}
+/* ── AFFILIÉS ── */
+.aff-box{display:none;margin-top:16px;background:#fffbeb;
+         border:1px solid #fde68a;border-radius:12px;padding:18px}
+.aff-box h3{font-size:.875rem;color:#78350f;margin-bottom:12px;font-weight:700}
+.aff-links{display:flex;flex-wrap:wrap;gap:8px}
+.aff-link{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;
+          background:#fff;border:1px solid #fcd34d;border-radius:9px;
+          text-decoration:none;color:#92400e;font-size:.82rem;font-weight:600;
+          transition:all .2s}
+.aff-link:hover{background:#fef3c7;transform:translateY(-1px)}
+/* ── JOURNEY ── */
+.journey-box{display:none;margin-top:16px;background:#f0fdf4;
+             border:1px solid #86efac;border-radius:12px;padding:16px}
+.journey-box p{font-size:.82rem;color:#166534;font-weight:700;margin-bottom:10px}
+.journey-links{display:flex;flex-wrap:wrap;gap:8px}
+.journey-link{display:inline-flex;align-items:center;gap:6px;
+              padding:8px 14px;background:#fff;border:1px solid #86efac;
+              border-radius:9px;text-decoration:none;color:#166534;
+              font-size:.8rem;font-weight:600;transition:all .2s}
+.journey-link:hover{background:#dcfce7;transform:translateX(4px)}
+/* ── CAPTURE ── */
+.capture{display:none;background:#eef2ff;border:1px solid #c7d2fe;
+         border-radius:12px;padding:18px;margin-top:16px}
+.capture h3{font-size:.875rem;color:#3730a3;font-weight:700;margin-bottom:6px}
+.capture p{font-size:.8rem;color:#4338ca;margin-bottom:10px}
+.cap-form{display:flex;gap:8px;flex-wrap:wrap}
+.cap-form input{flex:1;min-width:170px;padding:10px 14px;
+  border:1.5px solid #c7d2fe;border-radius:9px;font-size:.88rem;background:#fff}
+.cap-form input:focus{outline:none;border-color:var(--purple)}
+.cap-btn{padding:10px 18px;background:var(--purple);color:#fff;
+         border:none;border-radius:9px;font-weight:700;cursor:pointer;
+         font-size:.85rem;white-space:nowrap}
+/* ── SHARE BAR ── */
+.share-bar{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.s-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;
+       border:none;border-radius:9px;font-size:.82rem;font-weight:700;
+       cursor:pointer;transition:all .2s}
+.s-btn:hover{transform:translateY(-1px);filter:brightness(1.1)}
+.s-reddit{background:#ff4500;color:#fff}
+.s-twitter{background:#000;color:#fff}
+.s-pdf{background:var(--green);color:#fff}
+/* ── AD SLOT ── */
+.ad-slot{background:#fff;border-radius:10px;padding:14px;text-align:center;
+         border:1px dashed #cbd5e0;margin-bottom:20px;min-height:80px}
+.footer{font-size:.75rem;color:#94a3b8;text-align:center;padding:24px 0 32px;line-height:1.7}
+@media(max-width:560px){.grid2{grid-template-columns:1fr}.future-grid{grid-template-columns:1fr}}
+@media print{.share-bar,.capture,.aff-box,.journey-box,.ad-slot{display:none!important}
+             .card{box-shadow:none}}
 </style>
 </head>
 <body>
 <header>
-<h1>Subscription Cost Auditor — Find Your Hidden Monthly Burn</h1>
-<p>The average person pays for 12-15 subscriptions and underestimates the total by 40%. Audit yours in 2 minutes. Netflix, Spotify, Adobe, gym, cloud storage and more.</p>
-<div style="margin-top:.6rem"><span class="badge">💸 Quick audit</span><span class="badge">🔍 Find hidden costs</span><span class="badge">📊 Visual breakdown</span><span class="badge">⚡ 2-minute setup</span></div>
+  <div class="badge">LEGION v25 · Decision Engine · Updated 2026</div>
+  <h1>💸 Subscription Cost Auditor 2026 — See What You're Burning</h1>
+  <p>Add all your monthly subscriptions and see the real annual cost, 10-year loss, and exactly which ones to cancel first.</p>
 </header>
-<div class="ads"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5382997898313669" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
 <div class="container">
-
+<div class="ad-slot"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5382997898313669" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});<\/script></div>
 <div class="card">
-<h2>💸 Subscription Cost Auditor — What Are You REALLY Paying?</h2>
-<div class="info warn">⚠️ The average person has 12-15 active subscriptions and underestimates the total by 40%. Let's find out your real number.</div>
-<div id="sub_list">
-<div class="sub-item" style="display:grid;grid-template-columns:1fr auto auto;gap:.5rem;align-items:center;margin-bottom:.5rem">
-<input type="text" class="sub-name" placeholder="Subscription name (e.g. Netflix)">
-<input type="number" class="sub-cost" placeholder="Cost" step="0.01" min="0" style="width:80px">
-<select class="sub-freq">
-<option value="1">/ mo</option>
-<option value="12">/ yr</option>
-<option value="4">/ qtr</option>
-</select>
+  <h2>🔢 Calculator</h2>
+  <div class="grid2"><div class="field"><label>Netflix / Disney+ (€/mo)</label><input type="number" id="s1" value="16" oninput="run()"/></div><div class="field"><label>Spotify / Music (€/mo)</label><input type="number" id="s2" value="10" oninput="run()"/></div><div class="field"><label>Amazon Prime (€/mo)</label><input type="number" id="s3" value="8" oninput="run()"/></div><div class="field"><label>Gym / Sport (€/mo)</label><input type="number" id="s4" value="35" oninput="run()"/></div><div class="field"><label>Cloud storage (€/mo)</label><input type="number" id="s5" value="3" oninput="run()"/></div><div class="field"><label>Software tools (€/mo)</label><input type="number" id="s6" value="20" oninput="run()"/></div><div class="field"><label>News / Media (€/mo)</label><input type="number" id="s7" value="12" oninput="run()"/></div><div class="field"><label>Other recurring (€/mo)</label><input type="number" id="s8" value="25" oninput="run()"/></div></div>
+  
+  <button class="btn" onclick="run()">⚡ Calculate — See What You Must Do</button>
 </div>
-</div>
-<button class="secondary" onclick="addSub()" style="margin-bottom:.5rem">+ Add subscription</button>
-<div class="info" style="font-size:.8rem;margin-bottom:.5rem">💡 Common subscriptions: Netflix, Spotify, Amazon Prime, Disney+, Apple iCloud, Adobe, LinkedIn, ChatGPT, Gym, Cloud storage, VPN, News, Gaming, Delivery, TV streaming...</div>
-<button class="primary" onclick="calcSubs()">Calculate my total burn</button>
-<div class="result" id="res_sub">
-  <div class="big" id="val_sub"></div>
-  <div class="sub" id="sub_sub"></div>
-  <div class="breakdown" id="brk_sub"></div>
-</div>
-</div>
-
 <div class="card">
-<h2>📊 Your subscription breakdown</h2>
-<div id="sub_breakdown" style="display:none">
-<div id="sub_list_out" style="margin-bottom:.8rem"></div>
-<div class="info" id="sub_verdict"></div>
+  <h2>📊 Results</h2>
+  <div class="result-row"><span class="res-label">💶 Monthly burn</span><span class="res-value" id="r_mo">—</span></div><div class="result-row"><span class="res-label">📅 Annual burn</span><span class="res-value" id="r_yr">—</span></div><div class="result-row"><span class="res-label">⏱️ Daily cost</span><span class="res-value" id="r_day">—</span></div><div class="result-row"><span class="res-label">📈 10yr opportunity cost</span><span class="res-value" id="r_inv">—</span></div>
+  <div class="shock" id="sub_shock"></div>
+  
+<div class="future-box" id="future_box">
+  <div class="future-header">🔮 Projection — what this costs you over time</div>
+  <div class="future-grid">
+    <div class="future-col">
+      <div class="future-year">3 years</div>
+      <div class="future-val" id="fut3">—</div>
+      <div class="future-sub">total spent</div>
+    </div>
+    <div class="future-col">
+      <div class="future-year">5 years</div>
+      <div class="future-val" id="fut5">—</div>
+      <div class="future-sub">total spent</div>
+    </div>
+    <div class="future-col">
+      <div class="future-year">10 years</div>
+      <div class="future-val" id="fut10">—</div>
+      <div class="future-sub">total spent</div>
+    </div>
+  </div>
 </div>
+  
+<div class="prescription" id="prescription">
+  <div class="prescription-header">⚡ What you should do NOW — 3 actions ranked by impact</div>
+  <div class="action-list"><div class="action-item" onclick="window.open("https://www.rocketmoney.com","_blank")"><div class="action-num">1</div><div class="action-text"><div class="action-title">Audit every subscription — kill the forgotten ones</div><div class="action-desc">The average person has 3-4 subscriptions they forgot about. Check your bank statement right now for charges you don't recognize.</div></div><span class="action-gain">Avg saving: 40-80€/mo</span></div><div class="action-item" onclick=""><div class="action-num">2</div><div class="action-text"><div class="action-title">Call and threaten to cancel — get 30-50% discount</div><div class="action-desc">For Netflix, Spotify, gym: call support, say you want to cancel. 70% of the time they offer a discount. Takes 5 minutes.</div></div><span class="action-gain">Save 15-30€/mo</span></div><div class="action-item" onclick=""><div class="action-num">3</div><div class="action-text"><div class="action-title">Move annual — save 20% immediately</div><div class="action-desc">Every subscription you'll keep for 12+ months: switch to annual billing. Average 20% discount.</div></div><span class="action-gain">Save 10-20% per service</span></div></div>
 </div>
-
-<div class="card">
-<h2>🔍 Quick-add common subscriptions</h2>
-<div style="display:flex;flex-wrap:wrap;gap:.4rem">
-<button class="secondary" style="width:auto;padding:.3rem .7rem;font-size:.78rem" onclick="quickAdd('Netflix','15.99')">Netflix €15.99</button>
-<button class="secondary" style="width:auto;padding:.3rem .7rem;font-size:.78rem" onclick="quickAdd('Spotify','10.99')">Spotify €10.99</button>
-<button class="secondary" style="width:auto;padding:.3rem .7rem;font-size:.78rem" onclick="quickAdd('Amazon Prime','8.99')">Prime €8.99</button>
-<button class="secondary" style="width:auto;padding:.3rem .7rem;font-size:.78nm" onclick="quickAdd('Disney+','8.99')">Disney+ €8.99</button>
-<button class="secondary" style="width:auto;padding:.3rem .7rem;font-size:.78rem" onclick="quickAdd('ChatGPT Plus','20')">ChatGPT €20</button>
-<button class="secondary" style="width:auto;padding:.3rem .7rem;font-size:.78rem" onclick="quickAdd('iCloud 200GB','2.99')">iCloud €2.99</button>
-<button class="secondary" style="width:auto;padding:.3rem .7rem;font-size:.78rem" onclick="quickAdd('Gym','39.99')">Gym €39.99</button>
-<button class="secondary" style="width:auto;padding:.3rem .7rem;font-size:.78rem" onclick="quickAdd('Adobe CC','59.99')">Adobe €59.99</button>
-<button class="secondary" style="width:auto;padding:.3rem .7rem;font-size:.78rem" onclick="quickAdd('YouTube Premium','13.99')">YT Premium €13.99</button>
-<button class="secondary" style="width:auto;padding:.3rem .7rem;font-size:.78rem" onclick="quickAdd('VPN','5.99')">VPN €5.99</button>
+  
+  <div class="aff-box" id="aff_box"><h3>💡 Tools that can solve this for you:</h3><div class="aff-links"><a class="aff-link" href="https://www.rocketmoney.com" target="_blank" rel="noopener sponsored">🚀 Rocket Money — Auto-cancel</a><a class="aff-link" href="https://www.truebill.com" target="_blank" rel="noopener sponsored">📊 Truebill — Bill negotiation</a><a class="aff-link" href="https://www.trim.com" target="_blank" rel="noopener sponsored">✂️ Trim — Cancel for you</a></div></div>
+  <div class="journey-box" id="journey_box"><p>🧭 Your next logical step:</p><div class="journey-links"><a class="journey-link" href="https://Legion33shadow.github.io/true-car-cost-calculator/">🚗 True Car Cost <span style="opacity:.6;font-size:.75rem">— other big hidden cost</span></a><a class="journey-link" href="https://Legion33shadow.github.io/real-hourly-rate/">⏱️ Real Hourly Rate <span style="opacity:.6;font-size:.75rem">— subscriptions in working hours</span></a><a class="journey-link" href="https://Legion33shadow.github.io/us-benefit-cliff/">🇺🇸 Welfare Cliff <span style="opacity:.6;font-size:.75rem">— reducing spend vs earning more</span></a></div></div>
+  <div class="capture" id="cap_box"><h3>📧 Save result + get alerted when rules change</h3><p>We'll send you a monthly subscription audit template + negotiation scripts.</p><form class="cap-form" onsubmit="return submitEmail(event,'subscription-cost-auditor',getResult())"><input type="email" id="cap_email" placeholder="your@email.com" required/><button type="submit" class="cap-btn">Save free →</button></form><p id="cap_thanks" style="display:none;color:var(--green);font-size:.82rem;margin-top:8px">✅ Saved! You'll be notified when rules change.</p></div>
+  <div class="share-bar"><button class="s-btn s-reddit" onclick="shareReddit('I audited all my subscriptions with this tool — I was spending way more than I thought')">🔴 Reddit</button><button class="s-btn s-twitter" onclick="shareTwitter('Built a subscription auditor that shows the 10-year opportunity cost — brutal')">𝕏 Twitter</button><button class="s-btn s-pdf" onclick="exportPDF()">📄 PDF</button></div>
 </div>
+<div class="ad-slot"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5382997898313669" data-ad-slot="3333333333" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});<\/script></div>
+<div class="footer">Updated 2026 · LEGION v25 Decision Engine · <a href="sitemap.xml">sitemap.xml</a></div>
 </div>
-
 <script>
-function addSub(name='',cost=''){
-  const list=document.getElementById('sub_list');
-  const div=document.createElement('div');
-  div.className='sub-item';
-  div.style.cssText='display:grid;grid-template-columns:1fr auto auto auto;gap:.4rem;align-items:center;margin-bottom:.4rem';
-  div.innerHTML='<input type="text" class="sub-name" placeholder="Name" value="'+name+'">'
-    +'<input type="number" class="sub-cost" placeholder="Cost" value="'+cost+'" step="0.01" min="0" style="width:75px">'
-    +'<select class="sub-freq"><option value="1">/ mo</option><option value="12">/ yr</option><option value="4">/ qtr</option></select>'
-    +'<button onclick="this.parentElement.remove()" style="background:#fee2e2;border:none;border-radius:6px;padding:.3rem .5rem;cursor:pointer;color:#b91c1c;font-size:.9rem">✕</button>';
-  list.appendChild(div);
+
+function exportPDF(){window.print()}
+function shareReddit(txt){
+  var t=encodeURIComponent(txt);
+  var u=encodeURIComponent(window.location.href);
+  window.open('https://www.reddit.com/submit?title='+t+'&url='+u,'_blank');
 }
-function quickAdd(name,cost){addSub(name,cost);}
-function calcSubs(){
-  const items=document.querySelectorAll('.sub-item');
-  let monthlyTotal=0;
-  const subs=[];
-  items.forEach(item=>{
-    const name=item.querySelector('.sub-name').value||'Unknown';
-    const cost=+item.querySelector('.sub-cost').value||0;
-    const freq=+item.querySelector('.sub-freq').value;
-    const monthly=freq===1?cost:freq===12?cost/12:cost/3;
-    if(monthly>0){subs.push({name,monthly,annual:monthly*12});monthlyTotal+=monthly;}
+function shareTwitter(txt){
+  var t=encodeURIComponent(txt+' '+window.location.href);
+  window.open('https://twitter.com/intent/tweet?text='+t,'_blank');
+}
+function submitEmail(e,slug,result){
+  e.preventDefault();
+  var em=document.getElementById('cap_email').value;
+  if(!em)return false;
+  var fd=new FormData();
+  fd.append('email',em);fd.append('source',slug);fd.append('result',result);
+  fetch('https://formspree.io/f/xpwzpwzp',{
+    method:'POST',body:fd,headers:{'Accept':'application/json'}
+  }).then(function(){
+    document.getElementById('cap_email').value='';
+    var t=document.getElementById('cap_thanks');
+    if(t)t.style.display='block';
+  }).catch(function(){});
+  return false;
+}
+function showAll(){
+  var ids=['aff_box','journey_box','cap_box'];
+  ids.forEach(function(id){
+    var el=document.getElementById(id);
+    if(el)el.style.display='block';
   });
-  if(subs.length===0){alert('Add at least one subscription first');return;}
-  const annual=monthlyTotal*12;
-  const hourly=annual/2080;
-  subs.sort((a,b)=>b.monthly-a.monthly);
-  const f=n=>'€'+n.toFixed(2);
-  document.getElementById('val_sub').textContent='€'+monthlyTotal.toFixed(2)+'/month';
-  document.getElementById('sub_sub').textContent='€'+annual.toFixed(2)+'/year · '+subs.length+' subscriptions';
-  document.getElementById('brk_sub').innerHTML=
-    'That's '+hourly.toFixed(1)+' work-hours/year just for subscriptions'+
-    ' · In 5 years: €'+Math.round(annual*5).toLocaleString()+
-    ' · Top spender: '+subs[0].name+' (€'+subs[0].monthly.toFixed(2)+'/mo)';
-  document.getElementById('res_sub').className='result show '+(monthlyTotal>150?'warn':'');
-  document.getElementById('sub_list_out').innerHTML=subs.map(s=>
-    '<div style="display:flex;justify-content:space-between;align-items:center;padding:.4rem 0;border-bottom:1px solid #e2e8f0;font-size:.85rem">'
-    +'<span>'+s.name+'</span>'
-    +'<div><span class="chip '+(s.monthly>20?'red':s.monthly>10?'org':'grn')+'">'+f(s.monthly)+'/mo</span>'
-    +'<span style="color:#64748b;font-size:.75rem;margin-left:.3rem">'+f(s.annual)+'/yr</span></div></div>'
-  ).join('');
-  const verdict=monthlyTotal<50?'✅ Under control — below average.':
-    monthlyTotal<100?'⚠️ Average zone — check if you use everything.':
-    monthlyTotal<200?'🔴 High spend — audit what you actually use.':
-    '🚨 Very high — immediate audit recommended.';
-  document.getElementById('sub_verdict').textContent=verdict;
-  document.getElementById('sub_breakdown').style.display='block';
 }
+
+
+var subMo=0;
+function getResult(){return subMo+'/mo';}
+function addRow(){
+  var c=document.getElementById('sub_list');
+  var div=document.createElement('div');
+  div.className='grid2';div.style.marginBottom='8px';
+  div.innerHTML='<div class="field"><input type="text" placeholder="Service name" style="width:100%;padding:10px 12px;border:1.5px solid #e2e8f0;border-radius:8px"/></div>'
+    +'<div class="field"><input type="number" placeholder="€/mo" style="width:100%;padding:10px 12px;border:1.5px solid #e2e8f0;border-radius:8px" oninput="run()"/></div>';
+  c.appendChild(div);
+}
+function run(){
+  var fixed=[
+    parseFloat(document.getElementById('s1').value)||0,
+    parseFloat(document.getElementById('s2').value)||0,
+    parseFloat(document.getElementById('s3').value)||0,
+    parseFloat(document.getElementById('s4').value)||0,
+    parseFloat(document.getElementById('s5').value)||0,
+    parseFloat(document.getElementById('s6').value)||0,
+    parseFloat(document.getElementById('s7').value)||0,
+    parseFloat(document.getElementById('s8').value)||0,
+  ];
+  var extra=0;
+  var inputs=document.querySelectorAll('#sub_list input[type=number]');
+  inputs.forEach(function(i){extra+=parseFloat(i.value)||0;});
+  var total=fixed.reduce(function(a,b){return a+b;},0)+extra;
+  subMo=Math.round(total);
+  var yr=total*12;
+  var f3=yr*3,f5=yr*5,f10=yr*10;
+  var inv10=f10*Math.pow(1.07,10);
+  document.getElementById('r_mo').textContent=total.toFixed(2)+'€/mo';
+  document.getElementById('r_yr').textContent=yr.toFixed(0)+'€/yr';
+  document.getElementById('r_day').textContent=(total/30).toFixed(2)+'€/day';
+  document.getElementById('r_inv').textContent=inv10.toFixed(0)+'€ invested at 7%';
+  document.getElementById('fut3').textContent=f3.toFixed(0)+'€';
+  document.getElementById('fut5').textContent=f5.toFixed(0)+'€';
+  document.getElementById('fut10').textContent=f10.toFixed(0)+'€';
+  document.getElementById('future_box').style.display='block';
+  var shock=document.getElementById('sub_shock');
+  shock.style.display='block';
+  if(total>300){shock.className='shock shock-red';}
+  else if(total>150){shock.className='shock shock-orange';}
+  else{shock.className='shock shock-green';}
+  shock.innerHTML='<div class="shock-title">You burn '+total.toFixed(0)+
+    '€ every month on subscriptions</div>'
+    +'<div class="shock-sub">That's '+yr.toFixed(0)+'€/year — over 10 years at 7% = '+inv10.toFixed(0)+'€ lost</div>';
+  document.getElementById('prescription').style.display='block';
+  showAll();
+}
+
+window.onload=run;
 </script>
-<div class="card" style="background:#f8fafc;border-style:dashed">
-<p style="font-size:.82rem;color:#64748b;text-align:center;line-height:1.7">
-⚠️ Tous les calculs sont des estimations basées sur les règles de 2026.
-Consultez un professionnel pour des décisions importantes. Mis à jour: 2026-04-28</p>
-</div>
-</div>
-<div class="ads"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5382997898313669" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
-<footer>
-<p>© 2026 Subscription Cost Auditor — Find Your Hidden Monthly Burn · https://legion33shadow.github.io/subscription-cost-auditor</p>
-<p style="margin-top:.3rem;font-size:.75rem">Outil gratuit · Informations indicatives uniquement</p>
-</footer>
 </body></html>
